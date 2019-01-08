@@ -19,10 +19,11 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'GFMapKitWrapper'
 ```
+not yet available on CocoaPods
 
 ## Author
 
-gualtierofrigerio, gualtiero.frigerio@epress.it
+gualtierofrigerio, gualtiero.frigerio@gmail.com
 
 ## License
 
