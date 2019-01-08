@@ -1,0 +1,6 @@
+framework module GFMapKitWrapper {
+  umbrella header "GFMapKitWrapper-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - GFMapKitWrapper (0.1.0)
+
+DEPENDENCIES:
+  - GFMapKitWrapper (from `../`)
+
+EXTERNAL SOURCES:
+  GFMapKitWrapper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GFMapKitWrapper: ea145b2dbc46470176277e30ed5706f96c686cc0
+
+PODFILE CHECKSUM: e62f8dc0b932e901c5205e552a475b219b6152ef
+
+COCOAPODS: 1.5.3
