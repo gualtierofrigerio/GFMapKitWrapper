@@ -38,6 +38,34 @@ class GFLocationManager : NSObject {
         }
     }
     
+    func getCoordinate(forAddress address:String, completionHandler:@escaping(CLLocationCoordinate2D?) ->Void) {
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            if  let placemark = placemarks?[0],
+                let coordinate = placemark.location?.coordinate {
+                completionHandler(coordinate)
+            }
+            else {
+                completionHandler(nil)
+            }
+        }
+    }
+    
+    func getCoordinates(forAddresses addresses:[String], completionHandler:@escaping([[String:CLLocationCoordinate2D?]]) ->Void) {
+        var returnCoordinates = [[String:CLLocationCoordinate2D?]]()
+        var addressesToResolve = addresses.count
+        for address in addresses {
+            self.getCoordinate(forAddress: address) { (coordinate) in
+                let element:[String:CLLocationCoordinate2D?] = ["coordinate" : coordinate]
+                returnCoordinates.append(element)
+                addressesToResolve -= 1
+                if addressesToResolve == 0 {
+                    completionHandler(returnCoordinates)
+                }
+            }
+        }
+    }
+    
     func requestLocationAuthorization() {
         if requestAlwaysAuthorization {
             locationManager.requestAlwaysAuthorization()

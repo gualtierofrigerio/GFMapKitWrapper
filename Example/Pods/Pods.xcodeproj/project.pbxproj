@@ -213,8 +213,8 @@
 			children = (
 				F9C122F218B8542E7A1A58EEC6A13B71 /* Pod */,
 				C40604BC0880E9AA017FCE1E115D99BD /* Support Files */,
-				2548B7CF21E4D12D00499711 /* GFMapKitWrapper.swift */,
 				2548B7D521E4FD2A00499711 /* GFLocationManager.swift */,
+				2548B7CF21E4D12D00499711 /* GFMapKitWrapper.swift */,
 			);
 			name = GFMapKitWrapper;
 			path = ../..;
@@ -666,7 +666,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GFMapKitWrapper/GFMapKitWrapper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GFMapKitWrapper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/GFMapKitWrapper/GFMapKitWrapper.modulemap";
 				PRODUCT_MODULE_NAME = GFMapKitWrapper;
@@ -700,7 +700,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/GFMapKitWrapper/GFMapKitWrapper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/GFMapKitWrapper/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/GFMapKitWrapper/GFMapKitWrapper.modulemap";
 				PRODUCT_MODULE_NAME = GFMapKitWrapper;

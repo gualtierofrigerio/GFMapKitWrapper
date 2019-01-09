@@ -17,10 +17,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let wrapper = GFMapKitWrapper(mapView: mapView)
-        //wrapper.centerMapOnPoint(latitude: 45.000, longitude: 50.000)
-        //wrapper.centerMapOnAddress(address: "Infinite Loop 1, Cupertino")
-        wrapper.centerMapOnCurrentLocation()
+        //wrapper.centerMapOnPoint(latitude: 45.4697645, longitude: 9.1349959)
+        //wrapper.centerMapOnAddress(address: "Piazza Duomo, Milano")
+        //wrapper.centerMapOnCurrentLocation()
+        //wrapper.showRouteFromCurrentLocation(toAddress: "Piazza Duomo, Milano")
+        wrapper.showRoute(fromAddress: "Piazza Duomo, Milano", toAddress: "Piazza Lodi, Milano")
     }
 
     override func didReceiveMemoryWarning() {
