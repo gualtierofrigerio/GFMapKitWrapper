@@ -10,6 +10,7 @@
 		1D14C5B72BB1523A99B705BB0BF64B49 /* GFMapKitWrapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9A53E4DD20BC798A4D9AEBF48232E3 /* GFMapKitWrapper-dummy.m */; };
 		2548B7D021E4D12D00499711 /* GFMapKitWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548B7CF21E4D12D00499711 /* GFMapKitWrapper.swift */; };
 		2548B7D621E4FD2A00499711 /* GFLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548B7D521E4FD2A00499711 /* GFLocationManager.swift */; };
+		2548B7D821E7714100499711 /* GFMapKitAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548B7D721E7714100499711 /* GFMapKitAnnotation.swift */; };
 		3D5CA311BC018277DDA968E6B6E7D78C /* Pods-GFMapKitWrapper_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C432240078094B0928B69476E96BE6B /* Pods-GFMapKitWrapper_Tests-dummy.m */; };
 		4B08EB607600622DEA1775CBF6BD0F88 /* Pods-GFMapKitWrapper_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BEC3A9EA9EC22931C6DC7A98752ED66 /* Pods-GFMapKitWrapper_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		983FB15FD4E658102C97E99C97E9C4F6 /* GFMapKitWrapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D3A27781EC6BF039EF984CFE78B45D4 /* GFMapKitWrapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,6 +44,7 @@
 		0D3A27781EC6BF039EF984CFE78B45D4 /* GFMapKitWrapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GFMapKitWrapper-umbrella.h"; sourceTree = "<group>"; };
 		2548B7CF21E4D12D00499711 /* GFMapKitWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GFMapKitWrapper.swift; path = GFMapKitWrapper/Classes/GFMapKitWrapper.swift; sourceTree = "<group>"; };
 		2548B7D521E4FD2A00499711 /* GFLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GFLocationManager.swift; path = GFMapKitWrapper/Classes/GFLocationManager.swift; sourceTree = "<group>"; };
+		2548B7D721E7714100499711 /* GFMapKitAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GFMapKitAnnotation.swift; path = GFMapKitWrapper/Classes/GFMapKitAnnotation.swift; sourceTree = "<group>"; };
 		25AA70E96E44426BB0650A3952008773 /* GFMapKitWrapper.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GFMapKitWrapper.xcconfig; sourceTree = "<group>"; };
 		3C432240078094B0928B69476E96BE6B /* Pods-GFMapKitWrapper_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GFMapKitWrapper_Tests-dummy.m"; sourceTree = "<group>"; };
 		4EC0B94923C60701451D9FFD19891155 /* Pods-GFMapKitWrapper_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GFMapKitWrapper_Example-resources.sh"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				F9C122F218B8542E7A1A58EEC6A13B71 /* Pod */,
 				C40604BC0880E9AA017FCE1E115D99BD /* Support Files */,
 				2548B7D521E4FD2A00499711 /* GFLocationManager.swift */,
+				2548B7D721E7714100499711 /* GFMapKitAnnotation.swift */,
 				2548B7CF21E4D12D00499711 /* GFMapKitWrapper.swift */,
 			);
 			name = GFMapKitWrapper;
@@ -369,6 +372,7 @@
 			files = (
 				2548B7D021E4D12D00499711 /* GFMapKitWrapper.swift in Sources */,
 				2548B7D621E4FD2A00499711 /* GFLocationManager.swift in Sources */,
+				2548B7D821E7714100499711 /* GFMapKitAnnotation.swift in Sources */,
 				1D14C5B72BB1523A99B705BB0BF64B49 /* GFMapKitWrapper-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

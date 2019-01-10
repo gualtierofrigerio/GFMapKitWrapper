@@ -25,7 +25,14 @@ class ViewController: UIViewController {
         //wrapper.centerMapOnAddress(address: "Piazza Duomo, Milano")
         //wrapper.centerMapOnCurrentLocation()
         //wrapper.showRouteFromCurrentLocation(toAddress: "Piazza Duomo, Milano")
-        wrapper.showRoute(fromAddress: "Piazza Duomo, Milano", toAddress: "Piazza Lodi, Milano")
+        //wrapper.showRoute(fromAddress: "Piazza Duomo, Milano", toAddress: "Piazza Lodi, Milano")
+        var annotation = GFMapKitWrapperAnnotation()
+        annotation.title = "title"
+        annotation.subtitle = "subtitle"
+        annotation.address = "Piazza Duomo, Milano"
+        wrapper.addAnnotation(annotation: annotation)
+        wrapper.centerMapOnAddress(address: "Piazza Duomo, Milano")
+        //wrapper.showLineFromCurrentLocation(toAddress: "Piazza Duomo, Milano")
     }
 
     override func didReceiveMemoryWarning() {

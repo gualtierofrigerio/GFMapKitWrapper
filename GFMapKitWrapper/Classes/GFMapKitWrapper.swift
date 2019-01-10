@@ -22,11 +22,21 @@ public struct GFMapKitWrapperConfiguration {
     var transportType:MKDirectionsTransportType = .automobile // default transport type
 }
 
-public struct GFMapKitAnnotation {
-    var title:String?
-    var subtitle:String?
-    var latitude:Double?
-    var longitude:Double?
+/* struct to add an annotation to the map
+ * if latitude and longitude are set we use them
+ * otherwise the address needs to be set
+ * we try to resolve it and eventually add the annotation
+ */
+public struct GFMapKitWrapperAnnotation {
+    public var title:String?
+    public var subtitle:String?
+    public var latitude:Double?
+    public var longitude:Double?
+    public var address:String?
+    
+    public init() {
+        
+    }
 }
 
 /*
@@ -131,17 +141,51 @@ public class GFMapKitWrapper : NSObject {
     
     /* draw the route between current user location and the coordinate specified */
     public func showRouteFromCurrentLocation(toLatitude:Double, longigute:Double) {
-        
+        locationManager.getCurrentLocation { (success, coordinate) in
+            if success {
+                if let coordinate = coordinate {
+                    let destCoordinate = CLLocationCoordinate2D(latitude: toLatitude, longitude: longigute)
+                    self.drawRoute(fromCoordinate: coordinate, toCoordinate: destCoordinate)
+                }
+            }
+        }
     }
     
     /* draw a line between current user location and the address */
     public func showLineFromCurrentLocation(toAddress:String) {
-        
+        locationManager.getCurrentLocation { (success, coordinate) in
+            if success {
+                if let coordinate = coordinate {
+                    self.locationManager.getCoordinate(forAddress: toAddress, completionHandler: { (addressCoordinate) in
+                        if let addressCoordinate = addressCoordinate {
+                            self.drawLine(fromCoordinate: coordinate, toCoordinate: addressCoordinate)
+                        }
+                    })
+                }
+            }
+        }
     }
     
     /* add an annotation */
-    public func addAnnotation(annotation:GFMapKitAnnotation) {
-        
+    public func addAnnotation(annotation:GFMapKitWrapperAnnotation) {
+        if let _ = annotation.latitude, let _ = annotation.longitude {
+            let gfAnnotation = GFMapKitAnnotation(annotation: annotation)
+            self.mapView?.addAnnotation(gfAnnotation)
+        }
+        else { // if we don't have coordinate we need the address
+            guard let address = annotation.address else {
+                return
+            }
+            locationManager.getCoordinate(forAddress: address) { (coordinate) in
+                if let coordinate = coordinate {
+                    var validAnnotation = annotation
+                    validAnnotation.latitude = coordinate.latitude
+                    validAnnotation.longitude = coordinate.longitude
+                    let gfAnnotation = GFMapKitAnnotation(annotation: validAnnotation)
+                    self.mapView?.addAnnotation(gfAnnotation)
+                }
+            }
+        }
     }
 }
 
@@ -191,5 +235,25 @@ extension GFMapKitWrapper : MKMapViewDelegate {
             return polylineRendered
         }
         return MKOverlayRenderer(overlay: overlay) // default renderer
+    }
+    
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard let annotation = annotation as? GFMapKitAnnotation else {
+            return nil // only support custom annotation class
+        }
+        let identifier = annotation.identifier
+        var annotationView:MKPinAnnotationView?
+        
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
+            annotationView = dequeuedView
+        }
+        else {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+        }
+        
+        annotationView?.tintColor = configuration.pinColor
+        annotationView?.pinTintColor = configuration.pinColor
+        annotationView?.canShowCallout = true
+        return annotationView
     }
 }
