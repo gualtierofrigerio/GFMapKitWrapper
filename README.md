@@ -9,22 +9,6 @@ Not yet availabe on CocoaPods
 Please refer to this page 
 http://www.gfrigerio.com/adding-maps-to-your-app/
 
-## Example
-
-#To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-#GFMapKitWrapper is available through [CocoaPods](https://cocoapods.org). To install
-#it, simply add the following line to your Podfile:
-
-#```ruby
-#pod 'GFMapKitWrapper'
-```
-#not yet available on CocoaPods
-
 ## Author
 
 gualtierofrigerio, gualtiero.frigerio@gmail.com
