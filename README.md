@@ -5,21 +5,25 @@
 [![License](https://img.shields.io/cocoapods/l/GFMapKitWrapper.svg?style=flat)](https://cocoapods.org/pods/GFMapKitWrapper)
 [![Platform](https://img.shields.io/cocoapods/p/GFMapKitWrapper.svg?style=flat)](https://cocoapods.org/pods/GFMapKitWrapper)
 
+Not yet availabe on CocoaPods
+Please refer to this page 
+http://www.gfrigerio.com/adding-maps-to-your-app/
+
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+#To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 
 ## Installation
 
-GFMapKitWrapper is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+#GFMapKitWrapper is available through [CocoaPods](https://cocoapods.org). To install
+#it, simply add the following line to your Podfile:
 
-```ruby
-pod 'GFMapKitWrapper'
+#```ruby
+#pod 'GFMapKitWrapper'
 ```
-not yet available on CocoaPods
+#not yet available on CocoaPods
 
 ## Author
 
